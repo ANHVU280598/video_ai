@@ -3,7 +3,7 @@ import OpenAI from "openai";
 
 const openai = new OpenAI({
     organization: "org-5R181Yjov5BNypzqhaTZYZOF",
-    apiKey: "",
+    
     dangerouslyAllowBrowser: true
 });
 
