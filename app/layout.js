@@ -1,5 +1,12 @@
+
 import { Inter } from "next/font/google";
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import "./globals.css";
+import Link from "next/link";
+import HomePageNavBar from "@/components/NavBar/HomePageNavBar";
+import ReduxProvider from "@/components/reduxProvider";
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +18,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="flex h-screen w-screen bg-black text-white">
+        <ReduxProvider>
+          <HomePageNavBar />
+          <div className="flex w-full">
+            {children}
+          </div>
+          </ReduxProvider>
+      </body>
     </html>
   );
 }
